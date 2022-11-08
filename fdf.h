@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 16:21:03 by cafriem           #+#    #+#             */
-/*   Updated: 2022/09/07 19:33:46 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/10/17 12:33:26 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,29 @@
 #  define BUFFER_SIZE 4096
 # endif
 
-#  define PIE 3.14
-#  define ESC 53
-#  define PLUS 24
-#  define MINUS 27
-#  define W 13
-#  define A 0
-#  define S 1
-#  define D 2
-#  define LEFT 123
-#  define RIGHT 124
-#  define DOWN 125
-#  define UP 126
-#  define R 15
-#  define F 3
-#  define X 7
-#  define Q 12
-#  define E 14
-#  define H 4
-#  define P 35
-#  define O 31
+# define PIE 3.14
+# define ESC 53
+# define PLUS 24
+# define MINUS 27
+# define W 13
+# define A 0
+# define S 1
+# define D 2
+# define LEFT 123
+# define RIGHT 124
+# define DOWN 125
+# define UP 126
+# define R 15
+# define F 3
+# define X 7
+# define Q 12
+# define E 14
+# define H 4
+# define K 40
+# define I 34
+# define J 38
+# define L 37
+# define C 8
 
 typedef struct s_data
 {
@@ -77,6 +80,7 @@ typedef struct s_data
 	float	z;
 	int		inc;
 	int		help;
+	int		colour;
 }	t_data;
 
 char	*get_next_line(int fd);
@@ -88,13 +92,22 @@ void	ft_bzero(void *s, size_t n);
 void	ft_open(char **old, char *new, int size, int fd);
 //--------------------FDF functions---------------//
 void	points_on_grid(t_data img);
-void	isometric_projection(float *x, float *y, int z, t_data img);
-void	reading_lines(char *text, t_data *img);
+void	points_on_grid2(int c, int linecount, t_data img);
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+void	rotation(float *x, float *y, float *z, t_data img);
+void	draw_points_downcheck(float z2, int linecount, int c, t_data img);
+void	isometric_projection1(float *x, float *y, int z, t_data img);
+int		isometric_profection2(int z, t_data img);
+void	reading_lines1(char *text, t_data *img);
+void	reading_lines2(char **tabline, int linecount, t_data *img);
 void	opening_files(int agrc, char **argv, t_data *img);
 void	draw_point(t_data img);
 void	init(t_data *img);
-int		key_esc(int keypress, t_data *img);
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-void	Legends(t_data *img);
+int		key_press1(int keypress, t_data *img);
+void	key_press2(int keypress, t_data *img);
+void	key_press3(int keypress, t_data *img);
+void	key_press4(int keypress, t_data *img);
+void	key_press5(int keypress, t_data *img);
+void	legends(t_data *img);
 
 #endif

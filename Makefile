@@ -5,8 +5,12 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 # -Ofast
 
-SRCS =	main.c \
-		get_next_line_bonus.c\
+SRCS =	fdf.c						\
+		fdf_points_draw.c			\
+		fdf_isometric.c				\
+		fdf_reading_lines.c			\
+		fdf_keypress.c				\
+		get_next_line_bonus.c		\
 		get_next_line_utils_bonus.c
 
 OBJS = $(SRCS:.c=.o)

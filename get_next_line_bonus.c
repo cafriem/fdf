@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 16:13:43 by cafriem           #+#    #+#             */
-/*   Updated: 2022/06/29 13:21:06 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/08 14:38:15 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,8 @@ char	*get_next_line(int fd)
 		buffer[fd] = NULL;
 		return (NULL);
 	}
-	buffer[fd] = ft_substr_gl(buffer[fd], ft_strlen(line), ft_strlen(buffer[fd]));
+	buffer[fd] = ft_substr_gl(buffer[fd], ft_strlen(line),
+			ft_strlen(buffer[fd]));
 	return (line);
 }
 

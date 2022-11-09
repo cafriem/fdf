@@ -10,6 +10,7 @@ SRCS =	fdf.c						\
 		fdf_isometric.c				\
 		fdf_reading_lines.c			\
 		fdf_keypress.c				\
+		fdf_legends.c				\
 		get_next_line_bonus.c		\
 		get_next_line_utils_bonus.c
 

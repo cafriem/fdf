@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:48:19 by cafriem           #+#    #+#             */
-/*   Updated: 2022/10/17 12:45:54 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/08 14:52:34 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,5 +141,5 @@ void	key_press5(int keypress, t_data *img)
 	points_on_grid(*img);
 	mlx_put_image_to_window(img->mlx, img->mlx_win, img->img, 0, 0);
 	if (img->help % 2 == 0)
-		legends(img);
+		legends1(img);
 }

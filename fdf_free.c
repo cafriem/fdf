@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:26:23 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/09 15:31:43 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/09 15:37:11 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,21 @@
 void	free_points(t_data *img)
 {
 	int	row;
-	int	colom;
 
 	row = 0;
-	colom = 0;
 	while (row < img->maxy)
 	{
-		while (colom < img->maxx)
-		{
-			free(img->points[row][colom]);
-			colom++;
-		}
+		free(img->points[row]);
 		row++;
 	}
+	free(img->points);
 }
+
+	// int	colom;
+//
+		// colom = 0;
+		// while (colom < img->maxx)
+		// {
+		// 	free(img->points[row][colom]);
+		// 	colom++;
+		// }

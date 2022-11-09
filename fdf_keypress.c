@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:48:19 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/08 14:52:34 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/09 15:34:46 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	key_press1(int keypress, t_data *img)
 	if (keypress == ESC)
 	{
 		mlx_destroy_window(img->mlx, img->mlx_win);
-		free(img->points);
+		free_points(img);
 		exit(0);
 	}
 	if (keypress == H)

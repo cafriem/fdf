@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:48:19 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/09 15:34:46 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/09 16:08:03 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,6 +135,7 @@ void	key_press5(int keypress, t_data *img)
 		img->colour = 0x00F3D6D3;
 		printf("%x\n", img->colour);
 	}
+	mlx_destroy_image(img->mlx, img->img);
 	img->img = mlx_new_image(img->mlx, 1080, 720);
 	img->addr = mlx_get_data_addr(img->img, &img->bits_per_pixel,
 			&img->line_length, &img->endian);

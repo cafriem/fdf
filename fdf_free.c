@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:26:23 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/09 15:38:20 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/09 16:07:28 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void	free_points(t_data *img)
 		row++;
 	}
 	free(img->points);
+	mlx_destroy_image(img->mlx, img->img);
 }

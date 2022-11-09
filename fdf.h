@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 16:21:03 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/08 14:50:48 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/09 15:32:19 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,5 +110,6 @@ void	key_press4(int keypress, t_data *img);
 void	key_press5(int keypress, t_data *img);
 void	legends1(t_data *img);
 void	legends2(t_data *img);
+void	free_points(t_data *img);
 
 #endif

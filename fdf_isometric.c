@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 12:07:11 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/08 14:41:11 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/10 16:41:41 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ void	isometric_projection1(float *x, float *y, int z, t_data img)
 		z *= -1;
 	}
 	inc = isometric_profection2(z, img);
-	*x = (ft_round((old_x - old_y) * cos(0.46373398)));
+	*x = ((old_x - old_y) * cos(0.46373398));
 	if (minus == 0)
-		*y = (ft_round((-inc + (old_x + old_y)) * sin(0.46373398)));
+		*y = ((-inc + (old_x + old_y)) * sin(0.46373398));
 	if (minus == 1)
-		*y = (ft_round((inc + (old_x + old_y)) * sin(0.46373398)));
+		*y = ((inc + (old_x + old_y)) * sin(0.46373398));
 	if (z == 0)
-		*y = (ft_round((old_x + old_y) * sin(0.46373398)));
+		*y = ((old_x + old_y) * sin(0.46373398));
 }
 
 int	isometric_profection2(int z, t_data img)

@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:39:46 by cafriem           #+#    #+#             */
-/*   Updated: 2022/09/03 14:00:58 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/10 16:26:42 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ void	ft_putnbr_fd(int n, int fd);
 
 //--------------------MY OWN MADE FUNCTION-----------//
 int		ft_power(int num, int power);
-int		ft_round(float num);
 int		ft_double_pointer_counter1(char **dp, int line_counter);
 int		ft_double_pointer_counter2(char **dp);
 

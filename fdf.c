@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 16:01:10 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/10 13:51:18 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:24:28 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,17 @@ void	opening_files(int agrc, char **argv, t_data *img)
 	int		fd;
 
 	if (agrc > 2)
+	{
 		write(2, "Failed", 6);
+		exit(1);
+	}
 	file_name = argv[1];
 	fd = open(file_name, O_RDONLY);
+	if (fd == -1)
+	{
+		write(2, "Failed", 6);
+		exit(1);
+	}
 	text = get_next_line(fd);
 	readfile = get_next_line(fd);
 	while (readfile != NULL)

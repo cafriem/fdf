@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:54:14 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/10 13:47:20 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/10 16:18:05 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	draw_point(t_data img)
 	dy /= c;
 	while (i <= c)
 	{
-		my_mlx_pixel_put(&img, ft_round(img.x0), ft_round(img.y0), img.colour);
+		my_mlx_pixel_put(&img, img.x0, img.y0, img.colour);
 		img.y0 += dy;
 		img.x0 += dx;
 		i++;
@@ -74,8 +74,8 @@ void	points_on_grid2(int c, int linecount, t_data img)
 		rotation(&img.x0, &img.y0, &z1, img);
 		rotation(&img.x1, &img.y1, &z2, img);
 	}
-	isometric_projection1(&img.x0, &img.y0, ft_round(z1), img);
-	isometric_projection1(&img.x1, &img.y1, ft_round(z2), img);
+	isometric_projection1(&img.x0, &img.y0, z1, img);
+	isometric_projection1(&img.x1, &img.y1, z2, img);
 	if (c + 1 < img.colom)
 		draw_point(img);
 	if (img.points[linecount + 1])
@@ -93,7 +93,7 @@ void	draw_points_downcheck(float z2, int linecount, int c, t_data img)
 		z2 = img.points[linecount + 1][c] - (img.maxz / 2);
 		if (img.rotation != 0)
 			rotation(&img.x1, &img.y1, &z2, img);
-		isometric_projection1(&img.x1, &img.y1, ft_round(z2), img);
+		isometric_projection1(&img.x1, &img.y1, z2, img);
 		draw_point(img);
 	}
 }

@@ -2,7 +2,7 @@ NAME = fdf
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+CFLAGS = -Wall -Wextra -Werror -Ofast
 # -Ofast
 
 SRCS =	fdf.c						\

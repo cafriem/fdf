@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:34:07 by cafriem           #+#    #+#             */
-/*   Updated: 2022/06/14 13:35:53 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/10 16:07:03 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,15 @@ char	**ft_split(char const *s, char c)
 	char	*inside;
 	size_t	left;
 	int		m;
+	size_t	len;
 
 	left = 0;
 	m = 0;
+	len = ft_strlen(s);
 	main = malloc(sizeof(char *) * (ft_count(s, c)));
 	if (main == NULL)
 		return (NULL);
-	while (left < ft_strlen(s) && 1 != ft_count(s, c))
+	while (left < len && 1 != ft_count(s, c))
 	{
 		while (s[left] == c && s[left] != '\0')
 			left++;

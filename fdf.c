@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 16:01:10 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/10 18:24:28 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:56:09 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,23 +53,18 @@ void	rotation(float *x, float *y, float *z, t_data img)
 	}
 }
 
-void	opening_files(int agrc, char **argv, t_data *img)
+void	opening_files(char **argv, t_data *img)
 {
 	char	*file_name;
 	char	*readfile;
 	char	*text;
 	int		fd;
 
-	if (agrc > 2)
-	{
-		write(2, "Failed", 6);
-		exit(1);
-	}
 	file_name = argv[1];
 	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
 	{
-		write(2, "Failed", 6);
+		write(2, "Failed : No File Name", 6);
 		exit(1);
 	}
 	text = get_next_line(fd);
@@ -80,6 +75,7 @@ void	opening_files(int agrc, char **argv, t_data *img)
 		readfile = get_next_line(fd);
 	}
 	free (readfile);
+	close (fd);
 	reading_lines1(text, img);
 }
 
@@ -87,13 +83,18 @@ int	main(int argc, char *argv[])
 {
 	t_data	img;
 
+	if (argc < 2)
+	{
+		write(2, "Failed", 6);
+		exit(1);
+	}
 	img.mlx = mlx_init();
 	init(&img);
 	img.mlx_win = mlx_new_window(img.mlx, 1080, 720, argv[1]);
 	img.img = mlx_new_image(img.mlx, 1080, 720);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
 			&img.endian);
-	opening_files(argc, argv, &img);
+	opening_files(argv, &img);
 	mlx_put_image_to_window(img.mlx, img.mlx_win, img.img, 0, 0);
 	legends1(&img);
 	mlx_hook(img.mlx_win, 2, 1L << 2, key_press1, &img);

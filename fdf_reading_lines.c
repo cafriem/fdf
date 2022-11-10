@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:42:00 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/10 18:35:07 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:48:16 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	reading_lines1(char *text, t_data *img)
 
 	linecount = 0;
 	tabline = ft_split(text, '\n');
+	printf("hdwaouhdouawhdoa\n");
 	free(text);
 	while (tabline[linecount] != NULL)
 		linecount++;
@@ -41,7 +42,6 @@ void	reading_lines2(char **tabline, int linecount, t_data *img)
 	int		c;
 	int		z;
 
-	c = 0;
 	spaces = ft_split(tabline[linecount], ' ');
 	c = ft_double_pointer_counter2(spaces) - 1;
 	img->points[linecount] = ft_calloc(c + 2, sizeof(int));

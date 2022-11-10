@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 16:21:03 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/10 18:20:21 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:56:22 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	isometric_projection1(float *x, float *y, int z, t_data img);
 int		isometric_profection2(int z, t_data img);
 void	reading_lines1(char *text, t_data *img);
 void	reading_lines2(char **tabline, int linecount, t_data *img);
-void	opening_files(int agrc, char **argv, t_data *img);
+void	opening_files(char **argv, t_data *img);
 void	draw_point(t_data img);
 void	init(t_data *img);
 int		key_press1(int keypress, t_data *img);

@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:42:00 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/10 18:48:16 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/11/14 16:10:31 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	reading_lines1(char *text, t_data *img)
 
 	linecount = 0;
 	tabline = ft_split(text, '\n');
-	printf("hdwaouhdouawhdoa\n");
 	free(text);
 	while (tabline[linecount] != NULL)
 		linecount++;

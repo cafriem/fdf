@@ -12,7 +12,7 @@
 
 #include "fdf.h"
 
-void	draw_point(t_data img)
+void	draw_point(t_data img, int linecount, int row)
 {
 	float	dy;
 	float	dx;
@@ -30,7 +30,7 @@ void	draw_point(t_data img)
 	dy /= c;
 	while (i <= c)
 	{
-		my_mlx_pixel_put(&img, img.x0, img.y0, img.colour);
+		my_mlx_pixel_put(&img, img.x0, img.y0, img.colours[linecount][row]);
 		img.y0 += dy;
 		img.x0 += dx;
 		i++;
@@ -77,7 +77,7 @@ void	points_on_grid2(int c, int linecount, t_data img)
 	isometric_projection1(&img.x0, &img.y0, z1, img);
 	isometric_projection1(&img.x1, &img.y1, z2, img);
 	if (c + 1 < img.colom)
-		draw_point(img);
+		draw_point(img, linecount, c);
 	if (img.points[linecount + 1])
 		draw_points_downcheck (z2, linecount, c, img);
 }
@@ -94,7 +94,7 @@ void	draw_points_downcheck(float z2, int linecount, int c, t_data img)
 		if (img.rotation != 0)
 			rotation(&img.x1, &img.y1, &z2, img);
 		isometric_projection1(&img.x1, &img.y1, z2, img);
-		draw_point(img);
+		draw_point(img, linecount, c);
 	}
 }
 

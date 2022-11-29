@@ -35,6 +35,7 @@ SRCS =ft_memset.c		\
 		ft_putendl_fd.c	\
 		ft_putnbr_fd.c	\
 		ft_double_pointer_counter.c\
+		ft_strhex.c\
 		ft_power.c
 
 OBJS = $(SRCS:.c=.o)

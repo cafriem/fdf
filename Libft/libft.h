@@ -63,6 +63,7 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 //--------------------MY OWN MADE FUNCTION-----------//
+int		ft_strhex(char const *str);
 int		ft_power(int num, int power);
 int		ft_double_pointer_counter1(char **dp, int line_counter);
 int		ft_double_pointer_counter2(char **dp);

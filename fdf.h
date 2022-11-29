@@ -55,6 +55,7 @@
 typedef struct s_data
 {
 	int		**points;
+	int		**colours;
 	int		colom;
 	void	*mlx_win;
 	char	*addr;
@@ -101,7 +102,7 @@ int		isometric_profection2(int z, t_data img);
 void	reading_lines1(char *text, t_data *img);
 void	reading_lines2(char **tabline, int linecount, t_data *img);
 void	opening_files(char **argv, t_data *img);
-void	draw_point(t_data img);
+void	draw_point(t_data img, int linecount, int row);
 void	init(t_data *img);
 int		key_press1(int keypress, t_data *img);
 void	key_press2(int keypress, t_data *img);

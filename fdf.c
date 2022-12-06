@@ -43,12 +43,12 @@ void	rotation(float *x, float *y, float *z, t_data img)
 	}
 	if (img.y != 0)
 	{
-		*x = ((old_x * cos(img.y)) + (old_z * sin(img.y)));
-		*z = ((-old_x * sin(img.y)) + (old_z * cos(img.y)));
+		*x = ((old_x * cos(img.y)) - (*z * sin(img.y)));
+		*z = ((old_x * sin(img.y)) + (*z * cos(img.y)));
 	}
 	if (img.z != 0)
 	{
-		*x = ((old_x * cos(img.z)) - (-old_y * sin(img.z)));
+		*x = ((old_x * cos(img.z)) + (old_y * sin(img.z)));
 		*y = ((-old_x * sin(img.z)) + (old_y * cos(img.z)));
 	}
 }

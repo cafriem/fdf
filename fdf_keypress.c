@@ -24,9 +24,15 @@ int	key_press1(int keypress, t_data *img)
 	if (keypress == H)
 		img->help += 1;
 	if (keypress == PLUS)
+	{
 		img->space += 1;
+		img->height += 1;
+	}
 	if (keypress == MINUS)
+	{
 		img->space -= 1;
+		img->height -= 1;
+	}
 	if (keypress == UP)
 	{
 		img->updown -= 2;

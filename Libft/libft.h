@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 18:39:46 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/10 16:26:42 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/12/13 16:35:28 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
+# include <math.h>
 
 //----------------------ASCII FUNCTION----------------//
 int		ft_isalpha(int c);

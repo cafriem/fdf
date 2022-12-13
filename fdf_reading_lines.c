@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:42:00 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/14 16:10:31 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/12/13 16:18:45 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ void	reading_lines2(char **tabline, int linecount, t_data *img)
 		if (z > img->maxz)
 			img->maxz = z;
 		if (ft_strchr(spaces[c], 'x') != NULL)
-			img->colours[linecount][img->colom] = ft_strhex(ft_strjoin("0", (ft_strchr(spaces[c], 'x'))));
+			img->colours[linecount][img->colom] = ft_strhex
+				(ft_strjoin("0", (ft_strchr(spaces[c], 'x'))));
 		else
 			img->colours[linecount][img->colom] = 0x00FFFFFF;
 		img->colom++;

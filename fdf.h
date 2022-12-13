@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 16:21:03 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/10 18:56:22 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/12/13 13:48:08 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@
 # define J 38
 # define L 37
 # define C 8
+# define COS046 0.89438856137
+# define SIN046 0.4472908464
 
 typedef struct s_data
 {

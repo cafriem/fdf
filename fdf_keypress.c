@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:48:19 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/10 16:10:38 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/12/13 16:25:42 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,6 @@ int	key_press1(int keypress, t_data *img)
 	}
 	if (keypress == H)
 		img->help += 1;
-	if (keypress == PLUS)
-	{
-		img->space += 1;
-		img->height += 1;
-	}
-	if (keypress == MINUS)
-	{
-		img->space -= 1;
-		img->height -= 1;
-	}
 	if (keypress == UP)
 	{
 		img->updown -= 2;
@@ -136,8 +126,16 @@ void	key_press5(int keypress, t_data *img)
 		img->y = 0.348889;
 		img->z = 2.355000;
 	}
-	if (keypress == C)
-		img->colour = 0x00F3D6D3;
+	if (keypress == PLUS)
+	{
+		img->space += 1;
+		img->height += 1;
+	}
+	if (keypress == MINUS)
+	{
+		img->space -= 1;
+		img->height -= 1;
+	}
 	mlx_destroy_image(img->mlx, img->img);
 	img->img = mlx_new_image(img->mlx, 1080, 720);
 	img->addr = mlx_get_data_addr(img->img, &img->bits_per_pixel,

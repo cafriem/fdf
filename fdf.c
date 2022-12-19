@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 16:01:10 by cafriem           #+#    #+#             */
-/*   Updated: 2022/12/13 16:20:35 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/12/15 17:52:17 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	init(t_data *img)
 	img->z = 0;
 	img->maxz = 0;
 	img->help = 0;
-	img->colour = 0xFFFFFF;
+	img->colour = 0x00FFFFFF;
 }
 
 void	rotation(float *x, float *y, float *z, t_data img)

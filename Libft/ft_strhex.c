@@ -5,28 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 16:27:43 by cafriem           #+#    #+#             */
-/*   Updated: 2022/12/13 16:30:56 by cafriem          ###   ########.fr       */
+/*   Created: 2022/12/19 13:11:09 by cafriem           #+#    #+#             */
+/*   Updated: 2022/12/19 13:30:50 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_strhex2(char const *str, int total, int c, int add)
+void	ft_strhex2(char const *str, int c, int add, int *total)
 {
-	if (ft_strchr("0123456789", str[c]) != NULL)
-	{
-		if (!total || str[c] == '0')
-			total += (str[c] - 48);
-		else
-			total += ((str[c] - 48) * pow(16, add));
-	}
 	if (ft_strchr("abcdef", str[c]) != NULL)
 	{
-		if (!total && add == 0)
-			total += (str[c] - 87);
+		if (!(*total) && add == 0)
+			*total += (str[c] - 87);
 		else
-			total += ((str[c] - 87) * pow(16, add));
+			*total += ((str[c] - 87) * pow(16, add));
 	}
 }
 
@@ -41,7 +34,14 @@ int	ft_strhex(char const *str)
 	total = 0;
 	while (c != -1)
 	{
-		ft_strhex2(str, total, c, add);
+		if (ft_strchr("0123456789", str[c]) != NULL)
+		{
+			if (!total || str[c] == '0')
+				total += (str[c] - 48);
+			else
+				total += ((str[c] - 48) * pow(16, add));
+		}
+		ft_strhex2(str, c, add, &total);
 		add++;
 		c--;
 	}

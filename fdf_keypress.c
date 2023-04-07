@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:48:19 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/10 16:10:38 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/12/15 18:31:38 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,9 @@ int	key_press1(int keypress, t_data *img)
 		img->height -= 1;
 	}
 	if (keypress == UP)
-	{
 		img->updown -= 2;
-		img->leftright -= 2;
-	}
 	if (keypress == DOWN)
-	{
 		img->updown += 2;
-		img->leftright += 2;
-	}
 	key_press2(keypress, img);
 	return (0);
 }
@@ -50,15 +44,9 @@ int	key_press1(int keypress, t_data *img)
 void	key_press2(int keypress, t_data *img)
 {
 	if (keypress == LEFT)
-	{
-		img->updown -= 2;
-		img->leftright += 2;
-	}
-	if (keypress == RIGHT)
-	{
-		img->updown += 2;
 		img->leftright -= 2;
-	}
+	if (keypress == RIGHT)
+		img->leftright += 2;
 	if (keypress == R)
 		img->height += 1;
 	if (keypress == F)

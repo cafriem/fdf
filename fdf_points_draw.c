@@ -6,7 +6,7 @@
 /*   By: cafriem <cafriem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:54:14 by cafriem           #+#    #+#             */
-/*   Updated: 2022/11/10 16:18:05 by cafriem          ###   ########.fr       */
+/*   Updated: 2022/12/15 18:32:29 by cafriem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,13 @@ void	points_on_grid(t_data img)
 		c = 0;
 		while (c != img.colom)
 		{
+			img.y0 = ((linecount * img.space))
+				- ((img.maxy / 2) * img.space);
+			img.y1 = ((linecount * img.space))
+				- ((img.maxy / 2) * img.space);
+			img.x0 = (c * img.space) - ((img.maxx / 2) * img.space);
+			img.x1 = ((c + 1) * img.space)
+				- ((img.maxx / 2) * img.space);
 			points_on_grid2(c, linecount, img);
 			c++;
 		}
@@ -60,13 +67,6 @@ void	points_on_grid2(int c, int linecount, t_data img)
 	float	z1;
 	float	z2;
 
-	img.y0 = ((linecount * img.space) + img.updown)
-		- ((img.maxy / 2) * img.space);
-	img.y1 = ((linecount * img.space) + img.updown)
-		- ((img.maxy / 2) * img.space);
-	img.x0 = ((c * img.space) + img.leftright) - ((img.maxx / 2) * img.space);
-	img.x1 = (((c + 1) * img.space) + img.leftright)
-		- ((img.maxx / 2) * img.space);
 	z1 = img.points[linecount][c] - (img.maxz / 2);
 	z2 = img.points[linecount][c + 1] - (img.maxz / 2);
 	if (img.rotation != 0)
@@ -76,6 +76,10 @@ void	points_on_grid2(int c, int linecount, t_data img)
 	}
 	isometric_projection1(&img.x0, &img.y0, z1, img);
 	isometric_projection1(&img.x1, &img.y1, z2, img);
+	img.x0 += img.leftright;
+	img.x1 += img.leftright;
+	img.y0 += img.updown;
+	img.y1 += img.updown;
 	if (c + 1 < img.colom)
 		draw_point(img, linecount, c);
 	if (img.points[linecount + 1])
@@ -86,14 +90,16 @@ void	draw_points_downcheck(float z2, int linecount, int c, t_data img)
 {
 	if (img.points[linecount + 1])
 	{
-		img.y1 = (((linecount + 1) * img.space) + img.updown)
+		img.y1 = (((linecount + 1) * img.space))
 			- ((img.maxy / 2) * img.space);
-		img.x1 = ((c * img.space) + img.leftright)
+		img.x1 = ((c * img.space))
 			- ((img.maxx / 2) * img.space);
 		z2 = img.points[linecount + 1][c] - (img.maxz / 2);
 		if (img.rotation != 0)
 			rotation(&img.x1, &img.y1, &z2, img);
 		isometric_projection1(&img.x1, &img.y1, z2, img);
+		img.x1 += img.leftright;
+		img.y1 += img.updown;
 		draw_point(img, linecount, c);
 	}
 }

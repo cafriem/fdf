@@ -2,8 +2,7 @@ NAME = fdf
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -Ofast -march=native
-# -Ofast
+CFLAGS = -Wall -Wextra -Werror -Ofast
 
 SRCS =	fdf.c						\
 		fdf_points_draw.c			\

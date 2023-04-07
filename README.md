@@ -1,7 +1,6 @@
 # fdf
 
 *Running The Program*
-
 In order to run, type the following:
 
 "make"
@@ -14,6 +13,5 @@ the map names are inside of the 'folder test_maps' so just type in the name and 
 
 
 *Making your own map*
-
 If you want to make or create your own maps then make a new file and copy the format that is in other maps like spaces and commas.
 If you want to add color, then use maps like t1.fdf as referance. They use the hex code to identify the color.
